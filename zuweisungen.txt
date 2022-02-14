@@ -1,0 +1,20 @@
+Zuweisungen von Zeichen zu  Werten.
+Jedes Zeichen muss auf eine eigene Zeile, gefolgt von einem Wert, getrennt von Leerzeichen.
+Nur in diesem Schema wird das Zeichen mit seinem Wert vom Programm gelesen.
+Der Wert eines Zeichens liegt im Bereich der Natürlichen Zahlen ohne Null.
+
+Die Ziffern 1 bis 9 sind für Zahlen in Termen reserviert und können nicht zugewiesen werden.
+Die Zeichen 0 und s sind reserviert für die übersetzung von Zahlen. Bsp: 3 -> sss0
+
+Wenn die Zeichen s und 0 nicht zugewiesen werden, werden sie vom Programm hinzugefügt
+um Zahlen im Term zuzulassen.
+
++ 1
+- 2
+* 3
+/ 4
+= 5
+0 6
+s 7
+a 8
+b 9

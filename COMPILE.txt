@@ -1,0 +1,2 @@
+g++ -std=c++11 main.cpp Primes.cpp Translator.cpp GNumber.cpp -o main -Wall
+./main
