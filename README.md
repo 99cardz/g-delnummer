@@ -17,6 +17,6 @@ Characters that you want to include in your term can be assigned to numbers in t
 Since Gödel numbers can get gigantic, a custom Number Class implementing some arithmetic oparators is needed.
 The number is stored as a ```std::string``` in base 10, to mitigate the need to convert to base 10 each time the number is to be printed to the console.
 
-The algorythom for multiplication is [long-multiplication](https://en.wikipedia.org/wiki/Multiplication_algorithm#Long_multiplication) algorythm.
+The algorythom for multiplication is the [long-multiplication](https://en.wikipedia.org/wiki/Multiplication_algorithm#Long_multiplication) algorythm.
 
 Each new factor can be accumulated with the ```add_factor(prime, value)``` method.
