@@ -62,14 +62,15 @@ public:
 	 */
 	GNumber& operator*=(const GNumber& b);
 
+	bool operator==(const GNumber& b) const;
+
 	/**
-	 * @brief calculate the power of base to exp returning a GNumber.
+	 * @brief expand this GNumber object with a new factor
 	 * 
 	 * @param base
-	 * @param exp exponent
-	 * @return power of base to exp as GNumber.
+	 * @param exponent
 	 */
-	static GNumber simple_pow(const unsigned long& base, const unsigned long& exp);
+	void add_factor(const unsigned long& prime, unsigned long exponent);
 };
 
 

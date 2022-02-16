@@ -48,13 +48,11 @@ GNumber GNumber::operator*(const GNumber& b) const
 }
 
 
-GNumber GNumber::simple_pow(const unsigned long& base, const unsigned long& exp)
+void GNumber::add_factor(const unsigned long& prime, unsigned long exponent)
 {
-	GNumber gResult(base);
-	GNumber gBase(base);
-	for (unsigned long i = 1; i < exp; i++)
-		gResult *= gBase;
-	return gResult;
+	GNumber gPrime(prime);
+	while (exponent--)
+		*this *= gPrime;
 }
 
 std::ostream& operator<<(std::ostream& out, const GNumber& gn)
@@ -63,4 +61,9 @@ std::ostream& operator<<(std::ostream& out, const GNumber& gn)
 	while (idx--)
 		out << short(gn[idx]);
 	return out;
+}
+
+bool GNumber::operator==(const GNumber& b) const
+{
+	return m_digits == b.m_digits;
 }

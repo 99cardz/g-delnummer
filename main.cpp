@@ -62,7 +62,7 @@ int main()
 		primes.reset();
 		gnumber = 1;
 		for (const unsigned int& v : values)
-			gnumber *= GNumber::simple_pow(primes.next(), v);
+			gnumber.add_factor(primes.next(), v);
 		
 		std::cout << std::endl << "Goedelnummer fuer den Term: " << gnumber << std::endl << std::endl;
 	}

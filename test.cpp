@@ -158,16 +158,28 @@ int main()
         assert_equal(ossRd.str(), to_string(a * b), "Random multiplication");
     }
 
-    cout << "####### Testing simple_pow method #######" << endl;
+    cout << "####### Testing GNumber::add_factor() method #######" << endl;
 
     ostringstream oss4;
-    oss4 << GNumber::simple_pow(35, 7);
-    assert_equal(oss4.str(), string("64339296875"), "pow1");
-    ostringstream oss5;
-    oss5 << GNumber::simple_pow(10, 2);
-    assert_equal(oss5.str(), string("100"), "pow2");
-    ostringstream oss6;
-    oss6 << GNumber::simple_pow(11, 9);
-    assert_equal(oss6.str(), string("2357947691"), "pow3");
+    GNumber gn1 = 1;
+    gn1.add_factor(2, 4); // 2*2*2*2 
+    assert_equal(gn1, GNumber(16), "GNumber add_factor()");
+    gn1.add_factor(3, 2); // 2*2*2*2 * 3*3 
+    assert_equal(gn1, GNumber(144), "GNumber add_factor()");
+    gn1.add_factor(5, 5); // 2*2*2*2 * 3*3 * 5*5*5*5*5
+    assert_equal(gn1, GNumber(450000), "GNumber add_factor()");
+    gn1.add_factor(7, 4); // 2*2*2*2 * 3*3 * 5*5*5*5*5 * 7^4
+    assert_equal(gn1, GNumber(1080450000), "GNumber add_factor()");
+    gn1.add_factor(9, 3); // 2*2*2*2 * 3*3 * 5*5*5*5*5 * 7^4 * 9^3
+    assert_equal(gn1, GNumber(787648050000), "GNumber add_factor()");
+    gn1.add_factor(11, 6); // 2*2*2*2 * 3*3 * 5*5*5*5*5 * 7^4 * 9^3 * 11^6
+    assert_equal(gn1, GNumber(1395366567106050000), "GNumber add_factor()");
+    gn1.add_factor(13, 5); // 2*2*2*2 * 3*3 * 5*5*5*5*5 * 7^4 * 9^3 * 11^6 * 13^5
+    oss4 << gn1;
+    assert_equal(oss4.str(), string("518089838800506622650000"), "GNumber add_factor()");
+    gn1.add_factor(17, 3); // 2*2*2*2 * 3*3 * 5*5*5*5*5 * 7^4 * 9^3 * 11^6 * 13^5 * 17^3
+    oss4.str("");
+    oss4 << gn1;
+    assert_equal(oss4.str(), string("2545375378026889037079450000"), "GNumber add_factor()");
 
 }
