@@ -1,14 +1,22 @@
 # gödelnummer
-
 **Uni Assingment WS 2021/22 HTWK Leipzig**
+
+A C++ program that computes a Gödel number from a given string of characters with unique values.
 
 https://en.wikipedia.org/wiki/Gödel_numbering 
 
-## Primes
-Primes are loaded at programm start from a file. Provided are up to 60.000 primes, and if they are exhausted, next ones are Calculated. Wich is kind of unnessesery but it removes a nasty ```try catch```.
+## ```Primes```
+Primes are loaded at the program's start from a file. There are up to 60.000 primes provided from a file, but if they are exhausted, the next ones are calculated. Which is kind of unnecessary, but it removes a nasty ```try catch```.
 
-## Translator
-Handles all input sanitation to turning the input into a usable string. Checks for valid input.
+## ```Translator```
+Handles all sanitation, validation, converting of input term.
 
-## GNumber
-Custom Number Type to allow Bigger Integers than uint64. Only methematical operation implemented is Multiplication using  the [long-multiplication](https://en.wikipedia.org/wiki/Multiplication_algorithm#Long_multiplication) algorythm.
+Characters that you want to include in your term can be assigned to numbers in the file ```zuweisungen.txt```. 
+
+## ```GNumber```
+Since Gödel numbers can get gigantic, a custom Number Class implementing some arithmetic oparators is needed.
+The number is stored as a ```std::string``` in base 10, to mitigate the need to convert to base 10 each time the number is to be printed to the console.
+
+The algorythom for multiplication is [long-multiplication](https://en.wikipedia.org/wiki/Multiplication_algorithm#Long_multiplication) algorythm.
+
+Each new factor can be accumulated with the ```add_factor(prime, value)``` method.
