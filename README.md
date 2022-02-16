@@ -1,7 +1,7 @@
 # gödelnummer
 **Uni Assingment WS 2021/22 HTWK Leipzig**
 
-A C++ program that computes a Gödel number from a given string of characters with unique values.
+A C++ program that computes a Gödel number from a given string of characters with assigned values.
 
 https://en.wikipedia.org/wiki/Gödel_numbering 
 
