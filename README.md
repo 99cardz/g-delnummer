@@ -3,6 +3,8 @@
 
 A C++ program that computes a Gödel number from a given string of characters with assigned values.
 
+Files are not divided into folders as per requirement.
+
 https://en.wikipedia.org/wiki/Gödel_numbering 
 
 ## ```Primes```
