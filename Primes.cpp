@@ -3,7 +3,8 @@
 Primes::Primes(std::istream& stream)
 {
 	std::string token;
-	while (stream >> token)
+	unsigned int cap = 100; // we only need 100 primes
+	while (stream >> token && cap--)
 		m_content.push_back(std::stoi(token));
 
 	// for safety
