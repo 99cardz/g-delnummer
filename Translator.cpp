@@ -12,11 +12,11 @@ Translator::Translator(std::istream& stream)
 		if (!std::regex_match(line, match, std::regex("^\\s*([^1-9])\\s+(\\d+).*$")))
 			continue;
 
-		char c = match[1].str()[0]; // first group is char
-		unsigned int value = std::stoi(match[2].str()); // second group is value
+		const char c = match[1].str()[0]; // first group is char
+		const unsigned int value = std::stoi(match[2].str()); // second group is value
 
 		if (value == 0)
-			std::cout << "WARNUNG: Dem Zeichen '" << c << "' wurde der Wert 0 zugewiesen und wird somit ignoriert." << std::endl;
+			std::cout << "WARNUNG: Dem Zeichen '" << c << "' wurde der Wert 0 zugewiesen." << std::endl;
 
 		for (const auto& pair : m_char_values)
 		{

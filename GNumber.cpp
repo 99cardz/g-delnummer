@@ -4,9 +4,8 @@
 
 GNumber::GNumber(unsigned long long n)
 {
-	m_digits += n % 10;
-	while (n /= 10)
-		m_digits += n % 10;
+	do m_digits += n % 10;
+	while (n /= 10);
 }
 
 unsigned long GNumber::size() const { return m_digits.size(); }

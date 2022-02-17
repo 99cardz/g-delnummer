@@ -182,4 +182,8 @@ int main()
     oss4 << gn1;
     assert_equal(oss4.str(), string("2545375378026889037079450000"), "GNumber add_factor()");
 
+    gn1 = 1;
+    gn1.add_factor(2, 0);
+    assert_equal(gn1, GNumber(1), "zero value edge case");
+
 }

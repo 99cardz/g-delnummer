@@ -14,7 +14,7 @@ Primes::Primes(std::istream& stream)
 
 unsigned int Primes::find_next(const unsigned int& next)
 {
-	for (unsigned int i = 2 ; i < next; i++)
+	for (unsigned int i = 2; i < next; i++)
 		if (next % i == 0)
 			return find_next(next + 1);
 	return next;
